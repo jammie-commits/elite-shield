@@ -1,0 +1,22 @@
+# Dependencies
+react/node_modules/
+node_modules/
+
+# Build outputs
+react/dist/
+dist/
+
+# Vite cache
+react/.vite/
+.vite/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Editor
+.DS_Store
+*.swp
+*.swo
+.vscode/settings.json

@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elite Shield Security Services | Advanced Protection. Trusted Security.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<style>
+  /* Home-only styles */
+  #services-preview {
+    padding: 7rem 4rem;
+    max-width: 100%;
+    background: var(--black);
+  }
+  #services-preview .inner { max-width: 1400px; margin: 0 auto; }
+
+  .services-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 3.5rem;
+  }
+
+  #why-home {
+    background: var(--dark);
+    max-width: 100%;
+    padding: 7rem 0;
+  }
+  #why-home .inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+  .why-image-block {
+    position: relative;
+    height: 500px;
+    border-radius: 2px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .why-image-block img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7) contrast(1.1) grayscale(15%);
+    transition: all 0.5s;
+  }
+  .why-image-block:hover img { filter: brightness(0.8) grayscale(0%); }
+  .why-image-caption {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: linear-gradient(to top, rgba(8,10,12,0.9) 0%, transparent 100%);
+    padding: 2rem 1.5rem 1.5rem;
+  }
+  .why-image-caption p {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  /* Stats bar */
+  .stats-bar {
+    background: var(--gold);
+    padding: 3rem 4rem;
+  }
+  .stats-bar .inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    text-align: center;
+  }
+  .stats-bar .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+    color: var(--black);
+    line-height: 1;
+    letter-spacing: 2px;
+  }
+  .stats-bar .stat-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: rgba(8,10,12,0.65);
+    margin-top: 4px;
+  }
+
+  @media (max-width: 900px) {
+    #services-preview { padding: 5rem 1.5rem; }
+    .services-header { flex-direction: column; gap: 1.5rem; align-items: flex-start; }
+    #why-home .inner { grid-template-columns: 1fr; gap: 3rem; padding: 0 1.5rem; }
+    .why-image-block { height: 300px; }
+    .stats-bar { padding: 3rem 1.5rem; }
+    .stats-bar .inner { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .stats-bar .inner { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <svg class="shield-icon" viewBox="0 0 50 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M25 2L4 12V32C4 44 14 54 25 58C36 54 46 44 46 32V12L25 2Z" fill="rgba(200,168,75,0.12)" stroke="#c8a84b" stroke-width="1.5"/>
+      <path d="M25 9L10 17V32C10 41 17 49 25 52C33 49 40 41 40 32V17L25 9Z" fill="rgba(200,168,75,0.08)" stroke="#c8a84b" stroke-width="1"/>
+      <path d="M18 30L23 35L32 25" stroke="#c8a84b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div class="nav-logo-text">
+      <span>Elite Shield</span>
+      <span>Security Services</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="about.html#clients">Clients</a></li>
+    <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+  </ul>
+  <div class="nav-toggle" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html" onclick="toggleNav()">Home</a>
+  <a href="about.html" onclick="toggleNav()">About</a>
+  <a href="services.html" onclick="toggleNav()">Services</a>
+  <a href="about.html#clients" onclick="toggleNav()">Clients</a>
+  <a href="contact.html" onclick="toggleNav()">Contact</a>
+</div>
+
+<!-- HERO -->
+<section id="hero" style="padding:0; max-width:100%;">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div>
+      <div class="hero-badge">&#x1F6E1; PSRA Licensed &middot; Nairobi, Kenya</div>
+      <h1 class="hero-title">ELITE<br><span class="gold">SHIELD</span><br>SECURITY</h1>
+      <p class="hero-tagline">Advanced Protection. Trusted Security.</p>
+      <p class="hero-desc">Kenya's premier private security company delivering reliable, modern protection for businesses, residences, institutions, events, and VIP clients — powered by trained personnel and advanced technology.</p>
+      <div class="hero-actions">
+        <a href="contact.html" class="btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.44a2 2 0 0 1 1.99-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
+          Get a Quote
+        </a>
+        <a href="services.html" class="btn-outline">
+          View Services
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-num">15+</div>
+          <div class="stat-label">Services Offered</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">24/7</div>
+          <div class="stat-label">Operations</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">10+</div>
+          <div class="stat-label">Client Sectors</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <svg class="shield-big" viewBox="0 0 360 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="shieldGlow" cx="50%" cy="40%" r="60%">
+            <stop offset="0%" stop-color="rgba(200,168,75,0.25)"/>
+            <stop offset="100%" stop-color="rgba(200,168,75,0)"/>
+          </radialGradient>
+        </defs>
+        <circle cx="180" cy="180" r="165" stroke="rgba(200,168,75,0.06)" stroke-width="1"/>
+        <circle cx="180" cy="180" r="140" stroke="rgba(200,168,75,0.08)" stroke-width="1"/>
+        <circle cx="180" cy="180" r="115" stroke="rgba(200,168,75,0.1)" stroke-width="1"/>
+        <line x1="180" y1="20" x2="180" y2="340" stroke="rgba(200,168,75,0.06)" stroke-width="1"/>
+        <line x1="20" y1="180" x2="340" y2="180" stroke="rgba(200,168,75,0.06)" stroke-width="1"/>
+        <circle cx="180" cy="180" r="120" fill="url(#shieldGlow)"/>
+        <path d="M180 48L72 98V188C72 248 120 298 180 318C240 298 288 248 288 188V98L180 48Z" fill="rgba(200,168,75,0.07)" stroke="rgba(200,168,75,0.5)" stroke-width="1.5"/>
+        <path d="M180 68L92 112V188C92 240 130 284 180 302C230 284 268 240 268 188V112L180 68Z" fill="rgba(200,168,75,0.05)" stroke="rgba(200,168,75,0.3)" stroke-width="1"/>
+        <path d="M180 95L115 125V180C115 218 145 250 180 262C215 250 245 218 245 180V125L180 95Z" fill="rgba(200,168,75,0.06)" stroke="rgba(200,168,75,0.4)" stroke-width="1.5"/>
+        <path d="M153 182L170 199L207 162" stroke="#c8a84b" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="180" y="232" text-anchor="middle" font-family="'Bebas Neue', sans-serif" font-size="22" letter-spacing="5" fill="rgba(200,168,75,0.6)">ESS</text>
+        <g stroke="rgba(200,168,75,0.3)" stroke-width="2">
+          <line x1="180" y1="15" x2="180" y2="28"/>
+          <line x1="180" y1="332" x2="180" y2="345"/>
+          <line x1="15" y1="180" x2="28" y2="180"/>
+          <line x1="332" y1="180" x2="345" y2="180"/>
+        </g>
+        <circle cx="180" cy="21" r="2.5" fill="rgba(200,168,75,0.6)"/>
+        <circle cx="180" cy="339" r="2.5" fill="rgba(200,168,75,0.6)"/>
+        <circle cx="21" cy="180" r="2.5" fill="rgba(200,168,75,0.6)"/>
+        <circle cx="339" cy="180" r="2.5" fill="rgba(200,168,75,0.6)"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FEATURED SERVICES -->
+<div id="services-preview">
+  <div class="inner">
+    <div class="services-header reveal">
+      <div>
+        <p class="section-label">What We Offer</p>
+        <h2 class="section-title">SECURITY SOLUTIONS<br><span style="color:var(--gold);">THAT DELIVER</span></h2>
+      </div>
+      <a href="services.html" class="btn-outline">
+        View All 15 Services
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+
+    <div class="services-photo-grid reveal">
+
+      <!-- Manned Guarding -->
+      <div class="service-photo-card">
+        <div class="service-photo-wrap">
+          <img src="https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&w=800&q=80"
+               alt="Manned guarding security officer"
+               onerror="this.parentElement.style.background='var(--card)';this.style.display='none'">
+          <div class="service-photo-overlay"></div>
+          <span class="service-photo-tag">Personnel</span>
+        </div>
+        <div class="service-photo-body">
+          <div class="service-photo-name">Manned Guarding Services</div>
+          <div class="service-photo-desc">Trained security officers providing frontline protection for premises, assets, and personnel around the clock.</div>
+          <a href="services.html" class="service-photo-link">
+            Learn More
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- VIP Protection -->
+      <div class="service-photo-card">
+        <div class="service-photo-wrap">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80"
+               alt="VIP protection executive bodyguard"
+               onerror="this.parentElement.style.background='var(--card)';this.style.display='none'">
+          <div class="service-photo-overlay"></div>
+          <span class="service-photo-tag">VIP</span>
+        </div>
+        <div class="service-photo-body">
+          <div class="service-photo-name">VIP Protection &amp; Bodyguard</div>
+          <div class="service-photo-desc">Close protection for executives, politicians, diplomats, and high-profile individuals requiring discreet security.</div>
+          <a href="services.html" class="service-photo-link">
+            Learn More
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- CCTV -->
+      <div class="service-photo-card">
+        <div class="service-photo-wrap">
+          <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=800&q=80"
+               alt="CCTV surveillance camera installation"
+               onerror="this.parentElement.style.background='var(--card)';this.style.display='none'">
+          <div class="service-photo-overlay"></div>
+          <span class="service-photo-tag">Technology</span>
+        </div>
+        <div class="service-photo-body">
+          <div class="service-photo-name">CCTV Installation &amp; Monitoring</div>
+          <div class="service-photo-desc">State-of-the-art surveillance systems installed and monitored 24/7 for total site coverage and remote viewing.</div>
+          <a href="services.html" class="service-photo-link">
+            Learn More
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Event Security -->
+      <div class="service-photo-card">
+        <div class="service-photo-wrap">
+          <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800&q=80"
+               alt="Event security crowd management"
+               onerror="this.parentElement.style.background='var(--card)';this.style.display='none'">
+          <div class="service-photo-overlay"></div>
+          <span class="service-photo-tag">Events</span>
+        </div>
+        <div class="service-photo-body">
+          <div class="service-photo-name">Event Security Management</div>
+          <div class="service-photo-desc">Comprehensive crowd control and security management for corporate events, concerts, and large public gatherings.</div>
+          <a href="services.html" class="service-photo-link">
+            Learn More
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Access Control -->
+      <div class="service-photo-card">
+        <div class="service-photo-wrap">
+          <img src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?auto=format&fit=crop&w=800&q=80"
+               alt="Access control biometric system"
+               onerror="this.parentElement.style.background='var(--card)';this.style.display='none'">
+          <div class="service-photo-overlay"></div>
+          <span class="service-photo-tag">Technology</span>
+        </div>
+        <div class="service-photo-body">
+          <div class="service-photo-name">Access Control Systems</div>
+          <div class="service-photo-desc">Biometric and card-based entry systems to manage and restrict site access with precision and audit trails.</div>
+          <a href="services.html" class="service-photo-link">
+            Learn More
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Cyber Security -->
+      <div class="service-photo-card">
+        <div class="service-photo-wrap">
+          <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80"
+               alt="Cyber and information security"
+               onerror="this.parentElement.style.background='var(--card)';this.style.display='none'">
+          <div class="service-photo-overlay"></div>
+          <span class="service-photo-tag">Digital</span>
+        </div>
+        <div class="service-photo-body">
+          <div class="service-photo-name">Cyber &amp; Information Security</div>
+          <div class="service-photo-desc">Digital threat protection, data security consulting, and information systems safeguarding for modern organisations.</div>
+          <a href="services.html" class="service-photo-link">
+            Learn More
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div><!-- end grid -->
+
+    <div style="text-align:center; margin-top: 3rem;" class="reveal">
+      <a href="services.html" class="btn-primary">
+        Explore All 15 Services
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- WHY US -->
+<div id="why-home">
+  <div class="inner">
+    <div class="why-image-block reveal">
+      <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80"
+           alt="Elite Shield security professionals"
+           onerror="this.style.display='none'">
+      <div class="why-image-caption">
+        <p>&#x2714; PSRA Licensed &amp; Fully Insured</p>
+      </div>
+    </div>
+    <div class="reveal">
+      <p class="section-label">Our Advantage</p>
+      <h2 class="section-title">WHY CHOOSE<br><span style="color:var(--gold);">ELITE SHIELD?</span></h2>
+      <p class="section-desc">We combine experienced personnel with cutting-edge technology to deliver security solutions that truly work.</p>
+      <div class="advantage-list">
+        <div class="advantage-item">
+          <div class="advantage-num">01</div>
+          <div class="advantage-content">
+            <h4>Quick Response Time</h4>
+            <p>Rapid deployment of response teams ensures threats are neutralized before they escalate.</p>
+          </div>
+        </div>
+        <div class="advantage-item">
+          <div class="advantage-num">02</div>
+          <div class="advantage-content">
+            <h4>Professionally Trained Personnel</h4>
+            <p>All officers are certified under PSRA guidelines with regular refresher and VIP-specific programs.</p>
+          </div>
+        </div>
+        <div class="advantage-item">
+          <div class="advantage-num">03</div>
+          <div class="advantage-content">
+            <h4>Modern Technology</h4>
+            <p>Smart surveillance, GPS tracking, and access control — we use the latest tools available.</p>
+          </div>
+        </div>
+        <div class="advantage-item">
+          <div class="advantage-num">04</div>
+          <div class="advantage-content">
+            <h4>Affordable &amp; Transparent Pricing</h4>
+            <p>Competitive rates without compromising quality and reliability of our protection services.</p>
+          </div>
+        </div>
+        <div class="advantage-item">
+          <div class="advantage-num">05</div>
+          <div class="advantage-content">
+            <h4>Strong Supervision System</h4>
+            <p>Multi-tier oversight ensures consistent, professional service delivery at every assignment.</p>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top: 2rem;">
+        <a href="about.html" class="btn-outline">
+          Learn More About Us
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="inner">
+    <div>
+      <div class="stat-num">15+</div>
+      <div class="stat-label">Security Services</div>
+    </div>
+    <div>
+      <div class="stat-num">24/7</div>
+      <div class="stat-label">Operations</div>
+    </div>
+    <div>
+      <div class="stat-num">100%</div>
+      <div class="stat-label">PSRA Compliant</div>
+    </div>
+    <div>
+      <div class="stat-num">10+</div>
+      <div class="stat-label">Client Sectors</div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA BANNER -->
+<div class="cta-banner reveal">
+  <h2>READY TO SECURE<br><span style="color:var(--gold);">YOUR WORLD?</span></h2>
+  <p>Contact our team today for a free security consultation and tailored quote. We respond within 24 hours.</p>
+  <a href="contact.html" class="btn-primary">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.44a2 2 0 0 1 1.99-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
+    Get a Free Quote
+  </a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" style="display:inline-flex;">
+          <svg width="32" height="32" viewBox="0 0 50 60" fill="none">
+            <path d="M25 2L4 12V32C4 44 14 54 25 58C36 54 46 44 46 32V12L25 2Z" fill="rgba(200,168,75,0.12)" stroke="#c8a84b" stroke-width="1.5"/>
+            <path d="M18 30L23 35L32 25" stroke="#c8a84b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div class="nav-logo-text">
+            <span>Elite Shield</span>
+            <span>Security Services</span>
+          </div>
+        </a>
+        <p>Advanced Protection. Trusted Security. Kenya's premier private security company delivering reliable, modern protection across East Africa.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="services.html">Manned Guarding</a></li>
+          <li><a href="services.html">VIP Protection</a></li>
+          <li><a href="services.html">CCTV Systems</a></li>
+          <li><a href="services.html">Armed Security</a></li>
+          <li><a href="services.html">Event Security</a></li>
+          <li><a href="services.html">Mobile Patrols</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="about.html#clients">Our Clients</a></li>
+          <li><a href="about.html#training">Training</a></li>
+          <li><a href="about.html#why">Why Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="#">Ruiru, Kiambu County</a></li>
+          <li><a href="#">Nairobi, Kenya</a></li>
+          <li><a href="#">+254 — — — — —</a></li>
+          <li><a href="#">info@eliteshieldsecurity.co.ke</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Elite Shield Security Services. All rights reserved.</p>
+      <div class="psra-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        PSRA Licensed &amp; Insured
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+
+  function toggleNav() {
+    document.getElementById('mobileNav').classList.toggle('open');
+  }
+</script>
+</body>
+</html>

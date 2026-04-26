@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | Elite Shield Security Services</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<style>
+  /* About-page specific */
+  #about-section {
+    background: var(--dark);
+    max-width: 100%;
+    padding: 7rem 0;
+  }
+  #about-section .inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: start;
+  }
+
+  .about-photo {
+    position: relative;
+    border-radius: 2px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    height: 520px;
+  }
+  .about-photo img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    filter: brightness(0.75) contrast(1.1) grayscale(15%);
+    transition: all 0.5s;
+  }
+  .about-photo:hover img { filter: brightness(0.85) grayscale(0%); }
+  .about-photo-overlay {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: linear-gradient(to top, rgba(8,10,12,0.9), transparent);
+    padding: 2.5rem 2rem 1.5rem;
+  }
+  .about-photo-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.4rem;
+  }
+  .about-photo-caption {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--white);
+  }
+
+  /* Why section */
+  #why {
+    background: var(--black);
+    max-width: 100%;
+    padding: 7rem 0;
+  }
+  #why .inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: start;
+  }
+
+  /* Training */
+  #training {
+    background: var(--dark);
+    max-width: 100%;
+    padding: 7rem 0;
+  }
+  #training .inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+  .training-photo {
+    position: relative;
+    height: 420px;
+    border-radius: 2px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .training-photo img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    filter: brightness(0.75) contrast(1.1) grayscale(10%);
+    transition: all 0.5s;
+  }
+  .training-photo:hover img { filter: brightness(0.85) grayscale(0%); }
+  .training-photo-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(8,10,12,0.7), transparent 50%);
+  }
+  .training-content p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #9aa3b0;
+    margin-top: 1.5rem;
+  }
+
+  @media (max-width: 900px) {
+    #about-section .inner,
+    #why .inner,
+    #training .inner {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      padding: 0 1.5rem;
+    }
+    .about-photo, .training-photo { height: 300px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <svg class="shield-icon" viewBox="0 0 50 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M25 2L4 12V32C4 44 14 54 25 58C36 54 46 44 46 32V12L25 2Z" fill="rgba(200,168,75,0.12)" stroke="#c8a84b" stroke-width="1.5"/>
+      <path d="M25 9L10 17V32C10 41 17 49 25 52C33 49 40 41 40 32V17L25 9Z" fill="rgba(200,168,75,0.08)" stroke="#c8a84b" stroke-width="1"/>
+      <path d="M18 30L23 35L32 25" stroke="#c8a84b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div class="nav-logo-text">
+      <span>Elite Shield</span>
+      <span>Security Services</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="about.html#clients">Clients</a></li>
+    <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+  </ul>
+  <div class="nav-toggle" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html" onclick="toggleNav()">Home</a>
+  <a href="about.html" onclick="toggleNav()">About</a>
+  <a href="services.html" onclick="toggleNav()">Services</a>
+  <a href="about.html#clients" onclick="toggleNav()">Clients</a>
+  <a href="contact.html" onclick="toggleNav()">Contact</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-grid"></div>
+  <div class="page-hero-content">
+    <p class="page-hero-breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; About</p>
+    <h1 class="page-hero-title">ABOUT <span class="gold">US</span></h1>
+    <p class="page-hero-desc">Kenya's premier private security company — built on integrity, powered by technology, and driven by a relentless commitment to your safety.</p>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ABOUT SECTION -->
+<div id="about-section">
+  <div class="inner">
+    <div class="about-photo reveal">
+      <img src="https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&w=800&q=80"
+           alt="Elite Shield security team professionals"
+           onerror="this.style.display='none'">
+      <div class="about-photo-overlay">
+        <p class="about-photo-label">PSRA Licensed</p>
+        <p class="about-photo-caption">Nairobi, Kenya &mdash; Operations 24 / 7 / 365</p>
+      </div>
+    </div>
+    <div class="reveal">
+      <p class="section-label">Who We Are</p>
+      <h2 class="section-title">PROTECTING WHAT<br><span style="color:var(--gold);">MATTERS MOST</span></h2>
+      <p style="font-size:1rem;line-height:1.8;color:#9aa3b0;margin-bottom:2rem;">
+        Elite Shield Security Services is a licensed and insured private security company headquartered in Ruiru, Kiambu County, Kenya. We deliver professional, reliable, and technology-driven security solutions across East Africa — protecting businesses, residences, institutions, events, and VIP clients.
+      </p>
+      <div class="about-mission-box">
+        <h4>Our Mission</h4>
+        <p>To provide professional, reliable, and technology-driven security solutions that protect people, property, and assets while maintaining the highest standards of integrity and service excellence.</p>
+      </div>
+      <div class="about-mission-box" style="margin-top:1rem; border-color: rgba(200,168,75,0.4);">
+        <h4>Our Vision</h4>
+        <p>To become one of the most trusted and innovative security service providers in Kenya and across East Africa, setting the standard for professional security excellence.</p>
+      </div>
+
+      <div style="margin-top: 2.5rem;">
+        <p class="section-label">Core Values</p>
+        <div class="values-grid" style="margin-top: 1rem;">
+          <div class="value-item"><div class="value-dot"></div><span class="value-text">Integrity</span></div>
+          <div class="value-item"><div class="value-dot"></div><span class="value-text">Professionalism</span></div>
+          <div class="value-item"><div class="value-dot"></div><span class="value-text">Vigilance</span></div>
+          <div class="value-item"><div class="value-dot"></div><span class="value-text">Confidentiality</span></div>
+          <div class="value-item"><div class="value-dot"></div><span class="value-text">Reliability</span></div>
+          <div class="value-item"><div class="value-dot"></div><span class="value-text">Customer Satisfaction</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- WHY US -->
+<div id="why">
+  <div class="inner">
+    <div class="reveal">
+      <p class="section-label">Our Advantage</p>
+      <h2 class="section-title">WHY CHOOSE<br><span style="color:var(--gold);">ELITE SHIELD?</span></h2>
+      <p class="section-desc">We combine experienced personnel with cutting-edge technology to deliver security solutions that truly work — every time.</p>
+      <div class="advantage-list">
+        <div class="advantage-item">
+          <div class="advantage-num">01</div>
+          <div class="advantage-content">
+            <h4>Quick Response Time</h4>
+            <p>Rapid deployment of response teams ensures threats are neutralized before they escalate into serious incidents.</p>
+          </div>
+        </div>
+        <div class="advantage-item">
+          <div class="advantage-num">02</div>
+          <div class="advantage-content">
+            <h4>Professionally Trained Personnel</h4>
+            <p>All officers are PSRA certified with regular refresher training and specialized VIP protection programs.</p>
+          </div>
+        </div>
+        <div class="advantage-item">
+          <div class="advantage-num">03</div>
+          <div class="advantage-content">
+            <h4>Modern Technology</h4>
+            <p>From smart surveillance to GPS tracking and access control — we use the latest security technology available.</p>
+          </div>
+        </div>
+        <div class="advantage-item">
+          <div class="advantage-num">04</div>
+          <div class="advantage-content">
+            <h4>Affordable &amp; Transparent Pricing</h4>
+            <p>Competitive rates without compromising on the quality and reliability of our protection services.</p>
+          </div>
+        </div>
+        <div class="advantage-item">
+          <div class="advantage-num">05</div>
+          <div class="advantage-content">
+            <h4>Strong Supervision System</h4>
+            <p>Multi-tier oversight from supervisors to operations managers ensures consistent, professional service delivery.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ORG CHART -->
+    <div class="org-chart reveal">
+      <h3>COMPANY STRUCTURE</h3>
+      <div style="display:flex;flex-direction:column;align-items:center;">
+        <div class="org-box">Managing Director / CEO</div>
+        <div class="org-line"></div>
+        <div class="org-box" style="font-size:0.76rem; background:rgba(200,168,75,0.07);">Operations Manager</div>
+        <div class="org-line"></div>
+        <div style="width:80%; height:1px; background:rgba(200,168,75,0.3);"></div>
+        <div style="display:flex; gap:0.5rem; justify-content:center; width:100%; margin-top:0;">
+          <div style="display:flex;flex-direction:column;align-items:center;flex:1;">
+            <div style="width:1px;height:20px;background:rgba(200,168,75,0.3);"></div>
+            <div class="org-box dark">Admin<br>Manager</div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;flex:1;">
+            <div style="width:1px;height:20px;background:rgba(200,168,75,0.3);"></div>
+            <div class="org-box dark">Finance<br>Manager</div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;flex:1;">
+            <div style="width:1px;height:20px;background:rgba(200,168,75,0.3);"></div>
+            <div class="org-box dark">Control Room<br>Manager</div>
+            <div style="width:1px;height:20px;background:rgba(200,168,75,0.3);"></div>
+            <div class="org-box dark">Field<br>Supervisors</div>
+            <div style="width:1px;height:20px;background:rgba(200,168,75,0.3);"></div>
+            <div class="org-box dark">Security<br>Officers</div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:2rem; padding:1rem; background:rgba(200,168,75,0.05); border:1px solid rgba(200,168,75,0.15); border-radius:2px; text-align:center;">
+        <p style="font-size:0.75rem; letter-spacing:2px; font-weight:600; text-transform:uppercase; color:var(--gold); margin-bottom:0.4rem;">PSRA Licensed &amp; Insured</p>
+        <p style="font-size:0.8rem; color:var(--muted);">Full compliance with Kenya's Private Security Regulatory Authority</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- TRAINING -->
+<div id="training">
+  <div class="inner">
+    <div class="training-content reveal">
+      <p class="section-label">Our Personnel</p>
+      <h2 class="section-title">ELITE TRAINING.<br><span style="color:var(--gold);">ELITE PROTECTION.</span></h2>
+      <p>All our security officers undergo rigorous professional training in surveillance, access control, emergency response, customer service, and conflict management — fully in accordance with the guidelines of the <strong style="color:var(--gold)">Private Security Regulatory Authority (PSRA)</strong>.</p>
+      <p style="margin-top:1rem;">Regular specialized VIP protection training is also conducted to ensure our officers guarding high-profile clients are always mission-ready. First aid certification, firearms handling, and K-9 operations are core competencies for specialized units.</p>
+      <div class="training-tags">
+        <span class="tag">Surveillance</span>
+        <span class="tag">Access Control</span>
+        <span class="tag">Emergency Response</span>
+        <span class="tag">Customer Service</span>
+        <span class="tag">Conflict Management</span>
+        <span class="tag">VIP Protection</span>
+        <span class="tag">First Aid</span>
+        <span class="tag">PSRA Certified</span>
+        <span class="tag">Firearms Handling</span>
+        <span class="tag">K-9 Operations</span>
+      </div>
+    </div>
+    <div class="training-photo reveal">
+      <img src="https://images.unsplash.com/photo-1579912437766-7896df6d3cd3?auto=format&fit=crop&w=800&q=80"
+           alt="Security officer training exercise"
+           onerror="this.style.display='none'">
+      <div class="training-photo-overlay"></div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- CLIENTS -->
+<div id="clients">
+  <div class="inner">
+    <div class="reveal">
+      <p class="section-label">Who We Protect</p>
+      <h2 class="section-title">OUR CLIENTS</h2>
+      <p class="section-desc">We serve a diverse range of clients across all sectors — from private residences to government facilities and VIP individuals.</p>
+    </div>
+    <div class="clients-grid reveal">
+      <div class="client-item">
+        <div class="client-bullet"></div>
+        <span class="client-name">Residential Estates</span>
+      </div>
+      <div class="client-item">
+        <div class="client-bullet"></div>
+        <span class="client-name">Corporate Offices</span>
+      </div>
+      <div class="client-item">
+        <div class="client-bullet"></div>
+        <span class="client-name">Shopping Malls</span>
+      </div>
+      <div class="client-item">
+        <div class="client-bullet"></div>
+        <span class="client-name">Construction Sites</span>
+      </div>
+      <div class="client-item">
+        <div class="client-bullet"></div>
+        <span class="client-name">Schools &amp; Universities</span>
+      </div>
+      <div class="client-item">
+        <div class="client-bullet"></div>
+        <span class="client-name">Hospitals &amp; Clinics</span>
+      </div>
+      <div class="client-item">
+        <div class="client-bullet"></div>
+        <span class="client-name">Hotels &amp; Resorts</span>
+      </div>
+      <div class="client-item">
+        <div class="client-bullet"></div>
+        <span class="client-name">Banks &amp; Financial Institutions</span>
+      </div>
+      <div class="client-item">
+        <div class="client-bullet"></div>
+        <span class="client-name">Government Facilities</span>
+      </div>
+      <div class="client-item">
+        <div class="client-bullet"></div>
+        <span class="client-name">VIP Officials &amp; Diplomats</span>
+      </div>
+      <div class="client-item">
+        <div class="client-bullet"></div>
+        <span class="client-name">Business Executives</span>
+      </div>
+      <div class="client-item">
+        <div class="client-bullet"></div>
+        <span class="client-name">Events &amp; Public Gatherings</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- CTA BANNER -->
+<div class="cta-banner reveal">
+  <h2>READY TO WORK<br><span style="color:var(--gold);">WITH US?</span></h2>
+  <p>Explore our full range of security services or contact us directly to discuss your needs.</p>
+  <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+    <a href="services.html" class="btn-outline">View Our Services</a>
+    <a href="contact.html" class="btn-primary">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.44a2 2 0 0 1 1.99-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
+      Contact Us
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" style="display:inline-flex;">
+          <svg width="32" height="32" viewBox="0 0 50 60" fill="none">
+            <path d="M25 2L4 12V32C4 44 14 54 25 58C36 54 46 44 46 32V12L25 2Z" fill="rgba(200,168,75,0.12)" stroke="#c8a84b" stroke-width="1.5"/>
+            <path d="M18 30L23 35L32 25" stroke="#c8a84b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div class="nav-logo-text">
+            <span>Elite Shield</span>
+            <span>Security Services</span>
+          </div>
+        </a>
+        <p>Advanced Protection. Trusted Security. Kenya's premier private security company delivering reliable, modern protection across East Africa.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="services.html">Manned Guarding</a></li>
+          <li><a href="services.html">VIP Protection</a></li>
+          <li><a href="services.html">CCTV Systems</a></li>
+          <li><a href="services.html">Armed Security</a></li>
+          <li><a href="services.html">Event Security</a></li>
+          <li><a href="services.html">Mobile Patrols</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="about.html#clients">Our Clients</a></li>
+          <li><a href="about.html#training">Training</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="#">Ruiru, Kiambu County</a></li>
+          <li><a href="#">Nairobi, Kenya</a></li>
+          <li><a href="#">+254 — — — — —</a></li>
+          <li><a href="#">info@eliteshieldsecurity.co.ke</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Elite Shield Security Services. All rights reserved.</p>
+      <div class="psra-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        PSRA Licensed &amp; Insured
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+
+  function toggleNav() {
+    document.getElementById('mobileNav').classList.toggle('open');
+  }
+</script>
+</body>
+</html>

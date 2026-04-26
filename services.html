@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services | Elite Shield Security Services</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<style>
+  #all-services {
+    background: var(--black);
+    max-width: 100%;
+    padding: 6rem 0;
+  }
+  #all-services .inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 4rem;
+  }
+  .services-category {
+    margin-bottom: 5rem;
+  }
+  .category-label {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .category-label h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    letter-spacing: 3px;
+    color: var(--white);
+  }
+  .category-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+  @media (max-width: 900px) {
+    #all-services .inner { padding: 0 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <svg class="shield-icon" viewBox="0 0 50 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M25 2L4 12V32C4 44 14 54 25 58C36 54 46 44 46 32V12L25 2Z" fill="rgba(200,168,75,0.12)" stroke="#c8a84b" stroke-width="1.5"/>
+      <path d="M25 9L10 17V32C10 41 17 49 25 52C33 49 40 41 40 32V17L25 9Z" fill="rgba(200,168,75,0.08)" stroke="#c8a84b" stroke-width="1"/>
+      <path d="M18 30L23 35L32 25" stroke="#c8a84b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div class="nav-logo-text">
+      <span>Elite Shield</span>
+      <span>Security Services</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html" class="active">Services</a></li>
+    <li><a href="about.html#clients">Clients</a></li>
+    <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+  </ul>
+  <div class="nav-toggle" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html" onclick="toggleNav()">Home</a>
+  <a href="about.html" onclick="toggleNav()">About</a>
+  <a href="services.html" onclick="toggleNav()">Services</a>
+  <a href="about.html#clients" onclick="toggleNav()">Clients</a>
+  <a href="contact.html" onclick="toggleNav()">Contact</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-grid"></div>
+  <div class="page-hero-content">
+    <p class="page-hero-breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Services</p>
+    <h1 class="page-hero-title">OUR <span class="gold">SERVICES</span></h1>
+    <p class="page-hero-desc">15 comprehensive security solutions tailored to protect what matters most — from manned guarding to cutting-edge cyber security.</p>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ALL SERVICES -->
+<div id="all-services">
+  <div class="inner">
+
+    <!-- CATEGORY: PERSONNEL & GUARDING -->
+    <div class="services-category reveal">
+      <div class="category-label">
+        <p class="section-label" style="margin:0;">Personnel &amp; Guarding</p>
+        <div class="category-line"></div>
+      </div>
+      <div class="services-photo-grid">
+
+        <div class="service-photo-card">
+          <div class="service-photo-wrap">
+            <img src="https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&w=800&q=80"
+                 alt="Manned guarding security officer at post"
+                 onerror="this.parentElement.style.background='var(--card)';this.style.display='none'">
+            <div class="service-photo-overlay"></div>
+            <span class="service-photo-tag">Personnel</span>
+          </div>
+          <div class="service-photo-body">
+            <div class="service-photo-name">Manned Guarding Services</div>
+            <div class="service-photo-desc">Trained, uniformed security officers providing frontline protection for commercial premises, gated communities, warehouses, and institutions. Officers operate on strict duty schedules with supervisor oversight and incident reporting.</div>
+            <a href="contact.html" class="service-photo-link">
+              Request Service
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="service-photo-card">
+          <div class="service-photo-wrap">
+            <img src="https://images.unsplash.com/photo-1614850523296-d8c1af93d400?auto=format&fit=crop&w=800&q=80"
+                 alt="Armed security guard on duty"
+                 onerror="this.parentElement.style.background='var(--card)';this.style.display='none'">
+            <div class="service-photo-overlay"></div>
+            <span class="service-photo-tag">Armed</span>
+          </div>
+          <div class="service-photo-body">
+            <div class="service-photo-name">Armed Security Services</div>
+            <div class="service-photo-desc">Licensed armed personnel deployed for high-risk environments, cash-in-transit operations, sensitive government sites, and locations requiring elevated threat deterrence.</div>
+            <a href="contact.html" class="service-photo-link">
+              Request Service
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="service-photo-card">
+          <div class="service-photo-wrap">
+            <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80"
+                 alt="Mobile patrol security vehicle"
+                 onerror="this.parentElement.style.background='var(--card)';this.style.display='none'">
+            <div class="service-photo-overlay"></div>
+            <span class="service-photo-tag">Patrol</span>
+          </div>
+          <div class="service-photo-body">
+            <div class="service-photo-name">Mobile Patrol Services</div>
+            <div class="service-photo-desc">Scheduled and randomized patrol routes providing visible deterrence and rapid response coverage across estates, industrial parks, and commercial zones.</div>
+            <a href="contact.html" class="service-photo-link">
+              Request Service
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="service-photo-card">
+          <div class="service-photo-wrap">
+            <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=800&q=80"
+                 alt="K9 dog unit security handler"
+                 onerror="this.parentElement.style.background='var(--card)';this.style.display='none'">
+            <div class="service-photo-overlay"></div>
+            <span class="service-photo-tag">K-9 Unit</span>
+          </div>
+          <div class="service-photo-body">
+            <div class="service-photo-name">Dog Unit Security Services</div>
+            <div class="service-photo-desc">Trained K-9 units paired with certified handlers for perimeter security, detection operations, contraband searches, and enhanced deterrence at high-risk sites.</div>
+            <a href="contact.html" class="service-photo-link">
+              Request Service
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CATEGORY: VIP & EXECUTIVE -->
+    <div class="services-category reveal">
+      <div class="category-label">
+        <p class="section-label" style="margin:0;">VIP &amp; Executive</p>
+        <div class="category-line"></div>
+      </div>
+      <div class="services-photo-grid">
+
+        <div class="service-photo-card">
+          <div class="service-photo-wrap">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80"
+                 alt="VIP protection close bodyguard service"
+                 onerror="this.parentElement.style.background='var(--card)';this.style.display='none'">
+            <div class="service-photo-overlay"></div>
+            <span class="service-photo-tag">VIP</span>
+          </div>
+          <div class="service-photo-body">
+            <div class="service-photo-name">VIP Protection &amp; Bodyguard</div>
+            <div class="service-photo-desc">Discreet, professional close-protection services for executives, politicians, diplomats, celebrities, and high-net-worth individuals. Threat assessment, advance work, and route planning included.</div>
+            <a href="contact.html" class="service-photo-link">
+              Request Service
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="service-photo-card">
+          <div class="service-photo-wrap">
+            <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=800&q=80"
+                 alt="VIP motorcade luxury vehicle convoy"
+                 onerror="this.parentElement.style.background='var(--card)';this.style.display='none'">
+            <div class="service-photo-overlay"></div>
+            <span class="service-photo-tag">Motorcade</span>
+          </div>
+          <div class="service-photo-body">
+            <div class="service-photo-name">VIP Motorcade Services</div>
+            <div class="service-photo-desc">Coordinated, professional motorcade escorts providing safe, secure transportation for VIPs. Route reconnaissance, advance vehicle teams, and communication protocols fully managed.</div>
+            <a href="contact.html" class="service-photo-link">
+              Request Service
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="service-photo-card">
+          <div class="service-photo-wrap">
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80"
+                 alt="Alarm response team rapid deployment"
+                 onerror="this.parentElement.style.background='var(--card)';this.style.display='none'">
+            <div class="service-photo-overlay"></div>
+            <span class="service-photo-tag">Response</span>
+          </div>
+          <div class="service-photo-body">
+            <div class="service-photo-name">Alarm Response Services</div>
+            <div class="service-photo-desc">Rapid-response armed teams deployed immediately upon alarm activation, ensuring threats and intrusions are neutralized before they escalate into serious incidents.</div>
+            <a href="contact.html" class="service-photo-link">
+              Request Service
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CATEGORY: TECHNOLOGY & SYSTEMS -->
+    <div class="services-category reveal">
+      <div class="category-label">
+        <p class="section-label" style="margin:0;">Technology &amp; Systems</p>
+        <div class="category-line"></div>
+      </div>
+      <div class="services-photo-grid">
+
+        <div class="service-photo-card">
+          <div class="service-photo-wrap">
+            <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=800&q=80"
+                 alt="CCTV surveillance camera system"
+                 onerror="this.parentElement.style.background='var(--card)';this.style.display='none'">
+            <div class="service-photo-overlay"></div>
+            <span class="service-photo-tag">Surveillance</span>
+          </div>
+          <div class="service-photo-body">
+            <div class="service-photo-name">CCTV Installation &amp; Monitoring</div>
+            <div class="service-photo-desc">State-of-the-art HD surveillance systems installed, commissioned, and monitored 24/7 from our control room. Remote access, motion detection, and analytics capabilities included.</div>
+            <a href="contact.html" class="service-photo-link">
+              Request Service
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="service-photo-card">
+          <div class="service-photo-wrap">
+            <img src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?auto=format&fit=crop&w=800&q=80"
+                 alt="Biometric access control system"
+                 onerror="this.parentElement.style.background='var(--card)';this.style.display='none'">
+            <div class="service-photo-overlay"></div>
+            <span class="service-photo-tag">Access</span>
+          </div>
+          <div class="service-photo-body">
+            <div class="service-photo-name">Access Control Systems</div>
+            <div class="service-photo-desc">Biometric fingerprint, facial recognition, and card-based entry systems for precise management and restriction of site access with full audit trail reporting.</div>
+            <a href="contact.html" class="service-photo-link">
+              Request Service
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="service-photo-card">
+          <div class="service-photo-wrap">
+            <img src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=800&q=80"
+                 alt="Smart home security system installation"
+                 onerror="this.parentElement.style.background='var(--card)';this.style.display='none'">
+            <div class="service-photo-overlay"></div>
+            <span class="service-photo-tag">Smart Home</span>
+          </div>
+          <div class="service-photo-body">
+            <div class="service-photo-name">Smart Home Installation</div>
+            <div class="service-photo-desc">Integrated intelligent home security systems combining CCTV, motion sensors, smart locks, and alarm systems for complete residential protection controlled from your phone.</div>
+            <a href="contact.html" class="service-photo-link">
+              Request Service
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="service-photo-card">
+          <div class="service-photo-wrap">
+            <img src="https://images.unsplash.com/photo-1461039518260-6f7f622f7f13?auto=format&fit=crop&w=800&q=80"
+                 alt="GPS vehicle and mobile tracking"
+                 onerror="this.parentElement.style.background='var(--card)';this.style.display='none'">
+            <div class="service-photo-overlay"></div>
+            <span class="service-photo-tag">Tracking</span>
+          </div>
+          <div class="service-photo-body">
+            <div class="service-photo-name">Car &amp; Mobile Tracking</div>
+            <div class="service-photo-desc">GPS-based vehicle and asset tracking solutions providing real-time location intelligence, geofencing alerts, trip history, and theft recovery support for your fleet and valuables.</div>
+            <a href="contact.html" class="service-photo-link">
+              Request Service
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="service-photo-card">
+          <div class="service-photo-wrap">
+            <img src="https://images.unsplash.com/photo-1563770660941-20978e870e26?auto=format&fit=crop&w=800&q=80"
+                 alt="Security control room monitoring screens"
+                 onerror="this.parentElement.style.background='var(--card)';this.style.display='none'">
+            <div class="service-photo-overlay"></div>
+            <span class="service-photo-tag">Control Room</span>
+          </div>
+          <div class="service-photo-body">
+            <div class="service-photo-name">Control Room Monitoring</div>
+            <div class="service-photo-desc">24/7 centralized monitoring of CCTV feeds, alarm systems, access control, and all security communications from our dedicated operations control room staffed around the clock.</div>
+            <a href="contact.html" class="service-photo-link">
+              Request Service
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="service-photo-card">
+          <div class="service-photo-wrap">
+            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80"
+                 alt="Cyber security information protection"
+                 onerror="this.parentElement.style.background='var(--card)';this.style.display='none'">
+            <div class="service-photo-overlay"></div>
+            <span class="service-photo-tag">Digital</span>
+          </div>
+          <div class="service-photo-body">
+            <div class="service-photo-name">Cyber &amp; Information Security</div>
+            <div class="service-photo-desc">Digital threat protection, data security audits, network monitoring, and information systems safeguarding for organisations managing sensitive data and critical infrastructure.</div>
+            <a href="contact.html" class="service-photo-link">
+              Request Service
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CATEGORY: EVENTS & ASSESSMENT -->
+    <div class="services-category reveal">
+      <div class="category-label">
+        <p class="section-label" style="margin:0;">Events &amp; Consulting</p>
+        <div class="category-line"></div>
+      </div>
+      <div class="services-photo-grid">
+
+        <div class="service-photo-card">
+          <div class="service-photo-wrap">
+            <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800&q=80"
+                 alt="Event security crowd management concert"
+                 onerror="this.parentElement.style.background='var(--card)';this.style.display='none'">
+            <div class="service-photo-overlay"></div>
+            <span class="service-photo-tag">Events</span>
+          </div>
+          <div class="service-photo-body">
+            <div class="service-photo-name">Event Security Management</div>
+            <div class="service-photo-desc">Comprehensive security planning and execution for events of all sizes — concerts, corporate functions, sports events, political rallies, and VIP-attended galas. Crowd control and perimeter management specialists.</div>
+            <a href="contact.html" class="service-photo-link">
+              Request Service
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="service-photo-card">
+          <div class="service-photo-wrap">
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80"
+                 alt="Security risk assessment consulting"
+                 onerror="this.parentElement.style.background='var(--card)';this.style.display='none'">
+            <div class="service-photo-overlay"></div>
+            <span class="service-photo-tag">Consulting</span>
+          </div>
+          <div class="service-photo-body">
+            <div class="service-photo-name">Security Risk Assessments</div>
+            <div class="service-photo-desc">Comprehensive on-site vulnerability analysis, threat identification, and tailored security recommendations. Detailed written reports with actionable mitigation strategies provided to management.</div>
+            <a href="contact.html" class="service-photo-link">
+              Request Service
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- CTA BANNER -->
+<div class="cta-banner reveal">
+  <h2>NEED A CUSTOM<br><span style="color:var(--gold);">SECURITY PACKAGE?</span></h2>
+  <p>Our team will assess your needs and design a security solution tailored specifically to your environment and budget.</p>
+  <a href="contact.html" class="btn-primary">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.44a2 2 0 0 1 1.99-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
+    Get a Free Quote
+  </a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" style="display:inline-flex;">
+          <svg width="32" height="32" viewBox="0 0 50 60" fill="none">
+            <path d="M25 2L4 12V32C4 44 14 54 25 58C36 54 46 44 46 32V12L25 2Z" fill="rgba(200,168,75,0.12)" stroke="#c8a84b" stroke-width="1.5"/>
+            <path d="M18 30L23 35L32 25" stroke="#c8a84b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div class="nav-logo-text">
+            <span>Elite Shield</span>
+            <span>Security Services</span>
+          </div>
+        </a>
+        <p>Advanced Protection. Trusted Security. Kenya's premier private security company.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="services.html">Manned Guarding</a></li>
+          <li><a href="services.html">VIP Protection</a></li>
+          <li><a href="services.html">CCTV Systems</a></li>
+          <li><a href="services.html">Armed Security</a></li>
+          <li><a href="services.html">Event Security</a></li>
+          <li><a href="services.html">Mobile Patrols</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="about.html#clients">Our Clients</a></li>
+          <li><a href="about.html#training">Training</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="#">Ruiru, Kiambu County</a></li>
+          <li><a href="#">Nairobi, Kenya</a></li>
+          <li><a href="#">+254 — — — — —</a></li>
+          <li><a href="#">info@eliteshieldsecurity.co.ke</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Elite Shield Security Services. All rights reserved.</p>
+      <div class="psra-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        PSRA Licensed &amp; Insured
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.08 });
+  reveals.forEach(el => observer.observe(el));
+
+  function toggleNav() {
+    document.getElementById('mobileNav').classList.toggle('open');
+  }
+</script>
+</body>
+</html>

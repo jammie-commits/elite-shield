@@ -1,0 +1,1638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elite Shield Security Services | Advanced Protection. Trusted Security.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #080a0c;
+    --dark: #0e1115;
+    --card: #141820;
+    --gold: #c8a84b;
+    --gold-light: #e8c96a;
+    --gold-dim: #8a6f2e;
+    --white: #f0f2f5;
+    --muted: #7a8394;
+    --red: #c0392b;
+    --border: rgba(200,168,75,0.18);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Barlow', sans-serif;
+    font-weight: 400;
+    overflow-x: hidden;
+  }
+
+  /* NOISE TEXTURE OVERLAY */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.4;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4rem;
+    height: 72px;
+    background: rgba(8,10,12,0.92);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+
+  .nav-logo .shield-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .nav-logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+  }
+
+  .nav-logo-text span:first-child {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    color: var(--gold);
+  }
+
+  .nav-logo-text span:last-child {
+    font-size: 0.62rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+
+  .nav-cta {
+    background: var(--gold);
+    color: var(--black) !important;
+    padding: 8px 20px;
+    border-radius: 2px;
+    font-weight: 700 !important;
+    letter-spacing: 1.5px !important;
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta:hover { background: var(--gold-light) !important; color: var(--black) !important; }
+
+  /* ─── HERO ─── */
+  #hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding-top: 72px;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 60% 40%, rgba(200,168,75,0.06) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 80% at 90% 80%, rgba(192,57,43,0.04) 0%, transparent 50%),
+      linear-gradient(165deg, #0e1115 0%, #080a0c 50%, #0a0d10 100%);
+  }
+
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(200,168,75,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(200,168,75,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    width: 100%;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(200,168,75,0.1);
+    border: 1px solid rgba(200,168,75,0.3);
+    padding: 6px 16px;
+    border-radius: 2px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    animation: fadeSlideUp 0.8s ease forwards;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .hero-badge::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--gold);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3.5rem, 7vw, 6.5rem);
+    line-height: 0.92;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    animation: fadeSlideUp 0.8s ease 0.15s forwards;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .hero-title .gold { color: var(--gold); }
+
+  .hero-tagline {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 2rem;
+    animation: fadeSlideUp 0.8s ease 0.25s forwards;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .hero-desc {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: #9aa3b0;
+    max-width: 520px;
+    margin-bottom: 3rem;
+    animation: fadeSlideUp 0.8s ease 0.35s forwards;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    animation: fadeSlideUp 0.8s ease 0.45s forwards;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--gold);
+    color: var(--black);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 14px 32px;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: all 0.25s;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-primary:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(200,168,75,0.3);
+  }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    color: var(--white);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 14px 32px;
+    border-radius: 2px;
+    text-decoration: none;
+    border: 1px solid rgba(240,242,245,0.2);
+    transition: all 0.25s;
+    cursor: pointer;
+  }
+
+  .btn-outline:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+    transform: translateY(-2px);
+  }
+
+  /* Hero right: Big shield graphic */
+  .hero-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeSlideUp 1s ease 0.3s forwards;
+    opacity: 0;
+  }
+
+  .shield-big {
+    width: 360px;
+    height: 360px;
+    position: relative;
+    filter: drop-shadow(0 0 60px rgba(200,168,75,0.15));
+  }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    margin-top: 4rem;
+    background: var(--border);
+    border: 1px solid var(--border);
+    animation: fadeSlideUp 0.8s ease 0.55s forwards;
+    opacity: 0;
+  }
+
+  .stat {
+    background: var(--dark);
+    padding: 1.5rem;
+    text-align: center;
+  }
+
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.8rem;
+    color: var(--gold);
+    line-height: 1;
+    letter-spacing: 2px;
+  }
+
+  .stat-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+
+  @keyframes fadeSlideUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ─── SECTION COMMONS ─── */
+  section {
+    padding: 7rem 4rem;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    letter-spacing: 2px;
+    line-height: 1;
+    margin-bottom: 1.5rem;
+  }
+
+  .section-desc {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #7a8394;
+    max-width: 560px;
+  }
+
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    margin: 0;
+    opacity: 0.4;
+  }
+
+  /* ─── ABOUT ─── */
+  #about {
+    background: var(--dark);
+    max-width: 100%;
+    padding: 7rem 0;
+  }
+
+  #about .inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+
+  .about-mission-box {
+    border-left: 3px solid var(--gold);
+    padding: 1.5rem 2rem;
+    background: rgba(200,168,75,0.04);
+    margin-top: 2rem;
+  }
+
+  .about-mission-box h4 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    color: var(--gold);
+    margin-bottom: 0.6rem;
+  }
+
+  .about-mission-box p {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: #9aa3b0;
+  }
+
+  .values-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .value-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 1rem 1.25rem;
+    background: rgba(200,168,75,0.04);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+
+  .value-item:hover {
+    background: rgba(200,168,75,0.08);
+    border-color: rgba(200,168,75,0.4);
+    transform: translateX(4px);
+  }
+
+  .value-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+
+  .value-text {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--white);
+  }
+
+  /* ─── SERVICES ─── */
+  #services {
+    padding: 7rem 4rem;
+    max-width: 100%;
+    background: var(--black);
+  }
+
+  #services .inner {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .services-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 4rem;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .service-card {
+    background: var(--dark);
+    padding: 2rem 1.75rem;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+  }
+
+  .service-card:hover { background: var(--card); }
+  .service-card:hover::before { transform: scaleX(1); }
+
+  .service-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .service-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 0.6rem;
+    line-height: 1.3;
+  }
+
+  .service-desc {
+    font-size: 0.82rem;
+    line-height: 1.65;
+    color: var(--muted);
+  }
+
+  /* ─── CLIENTS ─── */
+  #clients {
+    background: var(--dark);
+    max-width: 100%;
+    padding: 7rem 0;
+  }
+
+  #clients .inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 4rem;
+  }
+
+  .clients-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-top: 3rem;
+  }
+
+  .client-item {
+    background: var(--dark);
+    padding: 1.5rem 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background 0.2s;
+  }
+
+  .client-item:hover { background: var(--card); }
+
+  .client-bullet {
+    width: 6px; height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .client-name {
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #9aa3b0;
+    text-transform: uppercase;
+  }
+
+  /* ─── WHY US ─── */
+  #why {
+    background: var(--black);
+    padding: 7rem 4rem;
+    max-width: 100%;
+  }
+
+  #why .inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+
+  .advantage-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .advantage-item {
+    display: flex;
+    gap: 1.25rem;
+    padding: 1.25rem 1.5rem;
+    border: 1px solid var(--border);
+    background: var(--dark);
+    transition: all 0.25s;
+    border-radius: 2px;
+  }
+
+  .advantage-item:hover {
+    border-color: rgba(200,168,75,0.4);
+    background: var(--card);
+    transform: translateX(6px);
+  }
+
+  .advantage-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    color: var(--gold);
+    line-height: 1;
+    opacity: 0.5;
+    flex-shrink: 0;
+    width: 40px;
+  }
+
+  .advantage-content h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+
+  .advantage-content p {
+    font-size: 0.83rem;
+    line-height: 1.65;
+    color: var(--muted);
+  }
+
+  /* Org chart */
+  .org-chart {
+    background: var(--dark);
+    border: 1px solid var(--border);
+    padding: 2.5rem;
+    border-radius: 2px;
+  }
+
+  .org-chart h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    color: var(--gold);
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .org-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  .org-box {
+    padding: 10px 22px;
+    background: rgba(200,168,75,0.1);
+    border: 1px solid rgba(200,168,75,0.35);
+    border-radius: 2px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    white-space: nowrap;
+    text-align: center;
+  }
+
+  .org-box.dark {
+    background: rgba(255,255,255,0.04);
+    border-color: rgba(255,255,255,0.12);
+    color: var(--white);
+    font-size: 0.76rem;
+  }
+
+  .org-line {
+    width: 1px;
+    height: 24px;
+    background: rgba(200,168,75,0.3);
+  }
+
+  .org-branch {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1.5rem;
+    width: 100%;
+  }
+
+  .org-branch-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .org-hline {
+    height: 1px;
+    width: 60%;
+    background: rgba(200,168,75,0.3);
+    margin: 0 auto;
+  }
+
+  /* ─── TRAINING ─── */
+  #training {
+    background: linear-gradient(135deg, var(--dark) 0%, var(--black) 100%);
+    max-width: 100%;
+    padding: 7rem 0;
+  }
+
+  #training .inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 4rem;
+    text-align: center;
+  }
+
+  .training-content {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #9aa3b0;
+    margin-top: 1.5rem;
+  }
+
+  .training-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+    margin-top: 3rem;
+  }
+
+  .tag {
+    background: rgba(200,168,75,0.08);
+    border: 1px solid rgba(200,168,75,0.25);
+    padding: 8px 18px;
+    border-radius: 2px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    transition: all 0.2s;
+  }
+
+  .tag:hover {
+    background: rgba(200,168,75,0.15);
+    border-color: rgba(200,168,75,0.5);
+  }
+
+  /* ─── CONTACT ─── */
+  #contact {
+    background: var(--dark);
+    max-width: 100%;
+    padding: 7rem 0;
+  }
+
+  #contact .inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: start;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .form-group label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .form-group input, .form-group select, .form-group textarea {
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--white);
+    padding: 12px 16px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 0.9rem;
+    border-radius: 2px;
+    outline: none;
+    transition: border-color 0.2s;
+    -webkit-appearance: none;
+  }
+
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    border-color: rgba(200,168,75,0.5);
+  }
+
+  .form-group textarea { resize: vertical; min-height: 120px; }
+
+  .form-group select option { background: var(--card); }
+
+  .contact-info-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
+
+  .contact-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+  }
+
+  .contact-info-icon {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .contact-info-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 4px;
+  }
+
+  .contact-info-value {
+    font-size: 0.9rem;
+    color: #9aa3b0;
+    line-height: 1.5;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--black);
+    border-top: 1px solid var(--border);
+    padding: 4rem 4rem 2rem;
+    max-width: 100%;
+  }
+
+  footer .inner {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .footer-brand p {
+    font-size: 0.88rem;
+    line-height: 1.75;
+    color: var(--muted);
+    margin-top: 1rem;
+    max-width: 300px;
+  }
+
+  .footer-col h5 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.25rem;
+  }
+
+  .footer-col ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .footer-col ul li a {
+    font-size: 0.85rem;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-col ul li a:hover { color: var(--gold); }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem;
+  }
+
+  .footer-bottom p {
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+
+  .psra-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(200,168,75,0.08);
+    border: 1px solid rgba(200,168,75,0.2);
+    padding: 6px 14px;
+    border-radius: 2px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  /* SCROLL ANIMATIONS */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Hamburger menu for mobile */
+  .nav-toggle { display: none; }
+
+  @media (max-width: 1100px) {
+    .services-grid { grid-template-columns: repeat(3, 1fr); }
+    .clients-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  @media (max-width: 900px) {
+    nav { padding: 0 1.5rem; }
+    .nav-links { display: none; }
+    .nav-toggle {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 8px;
+    }
+    .nav-toggle span {
+      width: 24px; height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    .hero-content { grid-template-columns: 1fr; padding: 0 1.5rem; }
+    .hero-visual { display: none; }
+    .hero-stats { grid-template-columns: repeat(3,1fr); }
+
+    section { padding: 5rem 1.5rem; }
+
+    #about .inner,
+    #why .inner,
+    #contact .inner { grid-template-columns: 1fr; gap: 3rem; padding: 0 1.5rem; }
+
+    #clients .inner,
+    #training .inner { padding: 0 1.5rem; }
+
+    .services-header { flex-direction: column; gap: 1.5rem; align-items: flex-start; }
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    #services { padding: 5rem 1.5rem; }
+    #services .inner { padding: 0; }
+
+    .clients-grid { grid-template-columns: repeat(2, 1fr); }
+
+    .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    footer { padding: 3rem 1.5rem 1.5rem; }
+    footer .inner { padding: 0; }
+    .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+  }
+
+  @media (max-width: 600px) {
+    .services-grid { grid-template-columns: 1fr; }
+    .clients-grid { grid-template-columns: 1fr 1fr; }
+    .values-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr; }
+    .hero-stats { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* Mobile nav overlay */
+  .mobile-nav {
+    display: none;
+    position: fixed;
+    inset: 72px 0 0 0;
+    background: rgba(8,10,12,0.98);
+    backdrop-filter: blur(20px);
+    z-index: 999;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .mobile-nav.open { display: flex; }
+  .mobile-nav a {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+    letter-spacing: 4px;
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .mobile-nav a:hover { color: var(--gold); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <svg class="shield-icon" viewBox="0 0 50 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M25 2L4 12V32C4 44 14 54 25 58C36 54 46 44 46 32V12L25 2Z" fill="rgba(200,168,75,0.12)" stroke="#c8a84b" stroke-width="1.5"/>
+      <path d="M25 9L10 17V32C10 41 17 49 25 52C33 49 40 41 40 32V17L25 9Z" fill="rgba(200,168,75,0.08)" stroke="#c8a84b" stroke-width="1"/>
+      <path d="M18 30L23 35L32 25" stroke="#c8a84b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div class="nav-logo-text">
+      <span>Elite Shield</span>
+      <span>Security Services</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#clients">Clients</a></li>
+    <li><a href="#training">Training</a></li>
+    <li><a href="#contact" class="nav-cta">Contact Us</a></li>
+  </ul>
+  <div class="nav-toggle" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="#about" onclick="toggleNav()">About</a>
+  <a href="#services" onclick="toggleNav()">Services</a>
+  <a href="#clients" onclick="toggleNav()">Clients</a>
+  <a href="#training" onclick="toggleNav()">Training</a>
+  <a href="#contact" onclick="toggleNav()">Contact</a>
+</div>
+
+<!-- HERO -->
+<section id="hero" style="padding:0; max-width:100%;">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div>
+      <div class="hero-badge">🛡 PSRA Licensed · Nairobi, Kenya</div>
+      <h1 class="hero-title">ELITE<br><span class="gold">SHIELD</span><br>SECURITY</h1>
+      <p class="hero-tagline">Advanced Protection. Trusted Security.</p>
+      <p class="hero-desc">Kenya's premier private security company delivering reliable, modern protection for businesses, residences, institutions, events, and VIP clients — powered by trained personnel and advanced technology.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.44a2 2 0 0 1 1.99-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
+          Get a Quote
+        </a>
+        <a href="#services" class="btn-outline">
+          View Services
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-num">15+</div>
+          <div class="stat-label">Services Offered</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">24/7</div>
+          <div class="stat-label">Operations</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">10+</div>
+          <div class="stat-label">Client Sectors</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <svg class="shield-big" viewBox="0 0 360 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="shieldGlow" cx="50%" cy="40%" r="60%">
+            <stop offset="0%" stop-color="rgba(200,168,75,0.25)"/>
+            <stop offset="100%" stop-color="rgba(200,168,75,0)"/>
+          </radialGradient>
+          <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="rgba(200,168,75,0.15)"/>
+            <stop offset="100%" stop-color="rgba(200,168,75,0)"/>
+          </radialGradient>
+        </defs>
+        <!-- Outer rings -->
+        <circle cx="180" cy="180" r="165" stroke="rgba(200,168,75,0.06)" stroke-width="1"/>
+        <circle cx="180" cy="180" r="140" stroke="rgba(200,168,75,0.08)" stroke-width="1"/>
+        <circle cx="180" cy="180" r="115" stroke="rgba(200,168,75,0.1)" stroke-width="1"/>
+        <!-- Crosshair lines -->
+        <line x1="180" y1="20" x2="180" y2="340" stroke="rgba(200,168,75,0.06)" stroke-width="1"/>
+        <line x1="20" y1="180" x2="340" y2="180" stroke="rgba(200,168,75,0.06)" stroke-width="1"/>
+        <!-- Diagonal marks -->
+        <line x1="63" y1="63" x2="297" y2="297" stroke="rgba(200,168,75,0.04)" stroke-width="1"/>
+        <line x1="297" y1="63" x2="63" y2="297" stroke="rgba(200,168,75,0.04)" stroke-width="1"/>
+        <!-- Glow fill -->
+        <circle cx="180" cy="180" r="120" fill="url(#shieldGlow)"/>
+        <!-- Main shield -->
+        <path d="M180 48L72 98V188C72 248 120 298 180 318C240 298 288 248 288 188V98L180 48Z"
+          fill="rgba(200,168,75,0.07)" stroke="rgba(200,168,75,0.5)" stroke-width="1.5"/>
+        <path d="M180 68L92 112V188C92 240 130 284 180 302C230 284 268 240 268 188V112L180 68Z"
+          fill="rgba(200,168,75,0.05)" stroke="rgba(200,168,75,0.3)" stroke-width="1"/>
+        <!-- Inner shield decoration -->
+        <path d="M180 95L115 125V180C115 218 145 250 180 262C215 250 245 218 245 180V125L180 95Z"
+          fill="rgba(200,168,75,0.06)" stroke="rgba(200,168,75,0.4)" stroke-width="1.5"/>
+        <!-- Checkmark -->
+        <path d="M153 182L170 199L207 162" stroke="#c8a84b" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- E S S letters -->
+        <text x="180" y="232" text-anchor="middle" font-family="'Bebas Neue', sans-serif" font-size="22" letter-spacing="5" fill="rgba(200,168,75,0.6)">ESS</text>
+        <!-- Tick marks on outer ring -->
+        <g stroke="rgba(200,168,75,0.3)" stroke-width="2">
+          <line x1="180" y1="15" x2="180" y2="28"/>
+          <line x1="180" y1="332" x2="180" y2="345"/>
+          <line x1="15" y1="180" x2="28" y2="180"/>
+          <line x1="332" y1="180" x2="345" y2="180"/>
+        </g>
+        <!-- Dots at cardinal and diagonal points -->
+        <circle cx="180" cy="21" r="2.5" fill="rgba(200,168,75,0.6)"/>
+        <circle cx="180" cy="339" r="2.5" fill="rgba(200,168,75,0.6)"/>
+        <circle cx="21" cy="180" r="2.5" fill="rgba(200,168,75,0.6)"/>
+        <circle cx="339" cy="180" r="2.5" fill="rgba(200,168,75,0.6)"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ABOUT -->
+<div id="about">
+  <div class="inner">
+    <div class="reveal">
+      <p class="section-label">Who We Are</p>
+      <h2 class="section-title">PROTECTING WHAT<br>MATTERS MOST</h2>
+      <div class="about-mission-box">
+        <h4>Our Mission</h4>
+        <p>To provide professional, reliable, and technology-driven security solutions that protect people, property, and assets while maintaining the highest standards of integrity and service.</p>
+      </div>
+      <div class="about-mission-box" style="margin-top:1rem; border-color: rgba(200,168,75,0.4);">
+        <h4>Our Vision</h4>
+        <p>To become one of the most trusted and innovative security service providers in Kenya and across East Africa.</p>
+      </div>
+    </div>
+    <div class="reveal">
+      <p class="section-label">Core Values</p>
+      <h2 class="section-title">BUILT ON<br>SOLID PRINCIPLES</h2>
+      <div class="values-grid" style="margin-top: 1.5rem;">
+        <div class="value-item"><div class="value-dot"></div><span class="value-text">Integrity</span></div>
+        <div class="value-item"><div class="value-dot"></div><span class="value-text">Professionalism</span></div>
+        <div class="value-item"><div class="value-dot"></div><span class="value-text">Vigilance</span></div>
+        <div class="value-item"><div class="value-dot"></div><span class="value-text">Confidentiality</span></div>
+        <div class="value-item"><div class="value-dot"></div><span class="value-text">Reliability</span></div>
+        <div class="value-item"><div class="value-dot"></div><span class="value-text">Customer Satisfaction</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- SERVICES -->
+<div id="services">
+  <div class="inner">
+    <div class="services-header reveal">
+      <div>
+        <p class="section-label">What We Offer</p>
+        <h2 class="section-title">COMPREHENSIVE<br>SECURITY SOLUTIONS</h2>
+      </div>
+      <a href="#contact" class="btn-primary">Request a Service</a>
+    </div>
+    <div class="services-grid reveal">
+      <div class="service-card">
+        <span class="service-icon">👮</span>
+        <div class="service-name">Manned Guarding Services</div>
+        <div class="service-desc">Trained security officers providing frontline protection for premises, assets, and personnel.</div>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🕵️</span>
+        <div class="service-name">VIP Protection & Bodyguard</div>
+        <div class="service-desc">Close protection for executives, politicians, diplomats and high-profile individuals.</div>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🚗</span>
+        <div class="service-name">VIP Motorcade Services</div>
+        <div class="service-desc">Coordinated, professional motorcade escorts for safe and secure VIP transportation.</div>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🔫</span>
+        <div class="service-name">Armed Security Services</div>
+        <div class="service-desc">Licensed armed personnel for high-risk environments, cash-in-transit, and sensitive sites.</div>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">📷</span>
+        <div class="service-name">CCTV Installation & Monitoring</div>
+        <div class="service-desc">State-of-the-art surveillance systems installed and monitored 24/7 for total coverage.</div>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🏠</span>
+        <div class="service-name">Smart Home Installation</div>
+        <div class="service-desc">Intelligent integrated home security systems for modern residential protection.</div>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">📡</span>
+        <div class="service-name">Car & Mobile Tracking</div>
+        <div class="service-desc">GPS-based vehicle and asset tracking solutions for real-time location intelligence.</div>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🚨</span>
+        <div class="service-name">Alarm Response Services</div>
+        <div class="service-desc">Rapid-response teams deployed immediately upon alarm activation to neutralize threats.</div>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🎪</span>
+        <div class="service-name">Event Security Management</div>
+        <div class="service-desc">Comprehensive crowd control and security management for events of all sizes.</div>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🔐</span>
+        <div class="service-name">Access Control Systems</div>
+        <div class="service-desc">Biometric and card-based entry systems to manage and restrict site access precisely.</div>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🚔</span>
+        <div class="service-name">Mobile Patrol Services</div>
+        <div class="service-desc">Scheduled and random patrol routes providing visible deterrence and rapid response.</div>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">📋</span>
+        <div class="service-name">Security Risk Assessments</div>
+        <div class="service-desc">Comprehensive vulnerability analysis and tailored security recommendations for any site.</div>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🐕</span>
+        <div class="service-name">Dog Unit Security Services</div>
+        <div class="service-desc">Trained K-9 units with handlers for perimeter security and detection operations.</div>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🖥️</span>
+        <div class="service-name">Control Room Monitoring</div>
+        <div class="service-desc">24/7 centralized monitoring of CCTV feeds, alarms, and all security communications.</div>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🔒</span>
+        <div class="service-name">Cyber & Information Security</div>
+        <div class="service-desc">Digital threat protection, data security, and information systems safeguarding.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- CLIENTS -->
+<div id="clients">
+  <div class="inner">
+    <div class="reveal">
+      <p class="section-label">Who We Protect</p>
+      <h2 class="section-title">OUR CLIENTS</h2>
+      <p class="section-desc">We serve a diverse range of clients across all sectors — from private residences to government facilities and VIP individuals.</p>
+    </div>
+    <div class="clients-grid reveal">
+      <div class="client-item"><div class="client-bullet"></div><span class="client-name">Residential Estates</span></div>
+      <div class="client-item"><div class="client-bullet"></div><span class="client-name">Corporate Offices</span></div>
+      <div class="client-item"><div class="client-bullet"></div><span class="client-name">Shopping Malls</span></div>
+      <div class="client-item"><div class="client-bullet"></div><span class="client-name">Construction Sites</span></div>
+      <div class="client-item"><div class="client-bullet"></div><span class="client-name">Schools & Universities</span></div>
+      <div class="client-item"><div class="client-bullet"></div><span class="client-name">Hospitals</span></div>
+      <div class="client-item"><div class="client-bullet"></div><span class="client-name">Hotels & Resorts</span></div>
+      <div class="client-item"><div class="client-bullet"></div><span class="client-name">Banks & Financial Institutions</span></div>
+      <div class="client-item"><div class="client-bullet"></div><span class="client-name">Government Facilities</span></div>
+      <div class="client-item"><div class="client-bullet"></div><span class="client-name">VIP Officials & Diplomats</span></div>
+      <div class="client-item"><div class="client-bullet"></div><span class="client-name">Business Executives</span></div>
+      <div class="client-item"><div class="client-bullet"></div><span class="client-name">Events & Public Gatherings</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- WHY US -->
+<div id="why">
+  <div class="inner">
+    <div class="reveal">
+      <p class="section-label">Our Advantage</p>
+      <h2 class="section-title">WHY CHOOSE<br>ELITE SHIELD?</h2>
+      <p class="section-desc">We combine experienced personnel with cutting-edge technology to deliver security solutions that truly work.</p>
+      <div class="advantage-list">
+        <div class="advantage-item">
+          <div class="advantage-num">01</div>
+          <div class="advantage-content">
+            <h4>Quick Response Time</h4>
+            <p>Rapid deployment of response teams ensures threats are neutralized before they escalate.</p>
+          </div>
+        </div>
+        <div class="advantage-item">
+          <div class="advantage-num">02</div>
+          <div class="advantage-content">
+            <h4>Professionally Trained Personnel</h4>
+            <p>All officers are certified under PSRA guidelines, with regular refresher training and VIP-specific programs.</p>
+          </div>
+        </div>
+        <div class="advantage-item">
+          <div class="advantage-num">03</div>
+          <div class="advantage-content">
+            <h4>Modern Technology</h4>
+            <p>From smart surveillance to GPS tracking and access control — we use the latest tools available.</p>
+          </div>
+        </div>
+        <div class="advantage-item">
+          <div class="advantage-num">04</div>
+          <div class="advantage-content">
+            <h4>Affordable & Transparent Pricing</h4>
+            <p>Competitive rates without compromising on the quality and reliability of our protection services.</p>
+          </div>
+        </div>
+        <div class="advantage-item">
+          <div class="advantage-num">05</div>
+          <div class="advantage-content">
+            <h4>Strong Supervision System</h4>
+            <p>Multi-tier oversight from supervisors to operations managers ensures consistent service delivery.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ORG CHART -->
+    <div class="org-chart reveal">
+      <h3>COMPANY STRUCTURE</h3>
+      <div class="org-node">
+        <div class="org-box">Managing Director / CEO</div>
+        <div class="org-line"></div>
+        <div class="org-box" style="font-size:0.76rem; background:rgba(200,168,75,0.07);">Operations Manager</div>
+        <div class="org-line"></div>
+        <!-- branch -->
+        <div style="width:100%; display:flex; justify-content:center;">
+          <div style="width:80%; height:1px; background:rgba(200,168,75,0.3);"></div>
+        </div>
+        <div style="display:flex; gap:0.5rem; justify-content:center; width:100%; margin-top:0;">
+          <div style="display:flex;flex-direction:column;align-items:center;flex:1;">
+            <div style="width:1px;height:20px;background:rgba(200,168,75,0.3);"></div>
+            <div class="org-box dark">Admin<br>Manager</div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;flex:1;">
+            <div style="width:1px;height:20px;background:rgba(200,168,75,0.3);"></div>
+            <div class="org-box dark">Finance<br>Manager</div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;flex:1;">
+            <div style="width:1px;height:20px;background:rgba(200,168,75,0.3);"></div>
+            <div class="org-box dark">Control Room<br>Manager</div>
+            <div style="width:1px;height:20px;background:rgba(200,168,75,0.3);"></div>
+            <div class="org-box dark">Field<br>Supervisors</div>
+            <div style="width:1px;height:20px;background:rgba(200,168,75,0.3);"></div>
+            <div class="org-box dark">Security<br>Officers</div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:2rem; padding:1rem; background:rgba(200,168,75,0.05); border:1px solid rgba(200,168,75,0.15); border-radius:2px; text-align:center;">
+        <p style="font-size:0.75rem; letter-spacing:2px; font-weight:600; text-transform:uppercase; color:var(--gold); margin-bottom:0.4rem;">PSRA Licensed & Insured</p>
+        <p style="font-size:0.8rem; color:var(--muted);">Full compliance with Kenya's Private Security Regulatory Authority</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- TRAINING -->
+<div id="training">
+  <div class="inner">
+    <div class="reveal">
+      <p class="section-label">Our Personnel</p>
+      <h2 class="section-title">ELITE TRAINING.<br>ELITE PROTECTION.</h2>
+      <p class="training-content">All our security officers undergo rigorous professional training in surveillance, access control, emergency response, customer service, and conflict management — fully in accordance with the guidelines of the <strong style="color:var(--gold)">Private Security Regulatory Authority (PSRA)</strong>. Regular specialized VIP protection training is also conducted to ensure our officers guarding high-profile clients are always mission-ready.</p>
+      <div class="training-tags">
+        <span class="tag">Surveillance</span>
+        <span class="tag">Access Control</span>
+        <span class="tag">Emergency Response</span>
+        <span class="tag">Customer Service</span>
+        <span class="tag">Conflict Management</span>
+        <span class="tag">VIP Protection</span>
+        <span class="tag">First Aid</span>
+        <span class="tag">PSRA Certified</span>
+        <span class="tag">Firearms Handling</span>
+        <span class="tag">K-9 Operations</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- CONTACT -->
+<div id="contact">
+  <div class="inner">
+    <div class="reveal">
+      <p class="section-label">Get In Touch</p>
+      <h2 class="section-title">REQUEST A<br>SECURITY QUOTE</h2>
+      <p class="section-desc" style="margin-bottom:0;">Tell us about your security needs and our team will get back to you within 24 hours with a tailored solution.</p>
+
+      <div class="contact-info-items">
+        <div class="contact-info-item">
+          <span class="contact-info-icon">📍</span>
+          <div>
+            <div class="contact-info-label">Head Office</div>
+            <div class="contact-info-value">Ruiru, Kiambu County<br>Nairobi, Kenya</div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <span class="contact-info-icon">📞</span>
+          <div>
+            <div class="contact-info-label">Phone</div>
+            <div class="contact-info-value">+254 — — — — — —</div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <span class="contact-info-icon">✉️</span>
+          <div>
+            <div class="contact-info-label">Email</div>
+            <div class="contact-info-value">info@eliteshieldsecurity.co.ke</div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <span class="contact-info-icon">🕐</span>
+          <div>
+            <div class="contact-info-label">Operations</div>
+            <div class="contact-info-value">24 Hours · 7 Days · 365 Days</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <form class="contact-form" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" placeholder="John Doe" required>
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" placeholder="+254 700 000 000" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="you@company.com" required>
+        </div>
+        <div class="form-group">
+          <label>Service Required</label>
+          <select required>
+            <option value="" disabled selected>Select a service...</option>
+            <option>Manned Guarding Services</option>
+            <option>VIP Protection / Bodyguard</option>
+            <option>VIP Motorcade Services</option>
+            <option>Armed Security Services</option>
+            <option>CCTV Installation & Monitoring</option>
+            <option>Smart Home Installation</option>
+            <option>Car & Mobile Tracking</option>
+            <option>Alarm Response Services</option>
+            <option>Event Security Management</option>
+            <option>Access Control Systems</option>
+            <option>Mobile Patrol Services</option>
+            <option>Security Risk Assessment</option>
+            <option>Dog Unit Security</option>
+            <option>Control Room Monitoring</option>
+            <option>Cyber & Information Security</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea placeholder="Describe your security needs, location, and any specific requirements..."></textarea>
+        </div>
+        <button type="submit" class="btn-primary" style="align-self:flex-start;">
+          Send Request
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/></svg>
+        </button>
+        <p id="form-msg" style="font-size:0.85rem;color:var(--gold);display:none;margin-top:0.5rem;">✓ Message sent! We'll be in touch shortly.</p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#" class="nav-logo" style="display:inline-flex;">
+          <svg width="32" height="32" viewBox="0 0 50 60" fill="none">
+            <path d="M25 2L4 12V32C4 44 14 54 25 58C36 54 46 44 46 32V12L25 2Z" fill="rgba(200,168,75,0.12)" stroke="#c8a84b" stroke-width="1.5"/>
+            <path d="M18 30L23 35L32 25" stroke="#c8a84b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div class="nav-logo-text">
+            <span>Elite Shield</span>
+            <span>Security Services</span>
+          </div>
+        </a>
+        <p>Advanced Protection. Trusted Security. Kenya's premier private security company delivering reliable, modern protection solutions across East Africa.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#services">Manned Guarding</a></li>
+          <li><a href="#services">VIP Protection</a></li>
+          <li><a href="#services">CCTV Systems</a></li>
+          <li><a href="#services">Armed Security</a></li>
+          <li><a href="#services">Event Security</a></li>
+          <li><a href="#services">Mobile Patrols</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#clients">Our Clients</a></li>
+          <li><a href="#training">Training</a></li>
+          <li><a href="#why">Why Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="#">Ruiru, Kiambu County</a></li>
+          <li><a href="#">Nairobi, Kenya</a></li>
+          <li><a href="#">+254 — — — — —</a></li>
+          <li><a href="#">info@eliteshield.co.ke</a></li>
+          <li><a href="#">www.eliteshield.co.ke</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Elite Shield Security Services. All rights reserved.</p>
+      <div class="psra-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        PSRA Licensed & Insured
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Mobile nav
+  function toggleNav() {
+    document.getElementById('mobileNav').classList.toggle('open');
+  }
+
+  // Form submit
+  function handleSubmit(e) {
+    e.preventDefault();
+    document.getElementById('form-msg').style.display = 'block';
+    e.target.reset();
+    setTimeout(() => {
+      document.getElementById('form-msg').style.display = 'none';
+    }, 5000);
+  }
+
+  // Active nav highlight on scroll
+  const sections = document.querySelectorAll('[id]');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 120;
+      if (window.scrollY >= sectionTop) {
+        current = section.getAttribute('id');
+      }
+    });
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      a.style.color = '';
+      if (a.getAttribute('href') === '#' + current) {
+        a.style.color = 'var(--gold)';
+      }
+    });
+  });
+</script>
+</body>
+</html>
