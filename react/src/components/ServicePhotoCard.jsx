@@ -23,6 +23,7 @@ export default function ServicePhotoCard({
   desc,
   linkTo = '/contact',
   linkLabel = 'Request Service',
+  objectFit = 'cover',
 }) {
   return (
     <div className="service-photo-card">
@@ -30,6 +31,7 @@ export default function ServicePhotoCard({
         <img
           src={image}
           alt={alt}
+          style={{ objectFit }}
           onError={(e) => { e.currentTarget.style.display = 'none' }}
         />
         <div className="service-photo-overlay" />

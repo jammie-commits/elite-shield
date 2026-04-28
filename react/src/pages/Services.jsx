@@ -37,6 +37,7 @@ export default function Services() {
                         desc={svc.fullDesc}
                         linkTo="/contact"
                         linkLabel="Request Service"
+                        objectFit={svc.objectFit}
                       />
                     </div>
                   ))}

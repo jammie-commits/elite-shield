@@ -108,6 +108,7 @@ export default function Home() {
                   desc={svc.shortDesc}
                   linkTo="/contact"
                   linkLabel="Request Service"
+                  objectFit={svc.objectFit}
                 />
               </div>
             ))}

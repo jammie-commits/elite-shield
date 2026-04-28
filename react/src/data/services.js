@@ -26,6 +26,7 @@ export const services = [
     name: 'Armed Security Services',
     image: '/assets/Elite-shield-uniform.jpeg',
     alt: 'Armed security guard on duty',
+    objectFit: 'contain',
     shortDesc: 'Licensed armed personnel for high-risk environments, cash-in-transit, and sensitive sites.',
     fullDesc: 'Licensed armed personnel deployed for high-risk environments, cash-in-transit operations, sensitive government sites, and locations requiring elevated threat deterrence.',
   },
