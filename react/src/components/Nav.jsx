@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { NavLink, Link } from 'react-router-dom'
-import ShieldLogo from './ShieldLogo'
 
 export default function Nav() {
   const [open, setOpen] = useState(false)
@@ -17,7 +16,7 @@ export default function Nav() {
       <nav>
         {/* Logo */}
         <Link to="/" className="nav-logo" onClick={close}>
-          <ShieldLogo />
+          <img src="/assets/logo.jpeg" alt="Elite Shield Security Services logo" className="nav-logo-img" />
           <div className="nav-logo-text">
             <span>Elite Shield</span>
             <span>Security Services</span>

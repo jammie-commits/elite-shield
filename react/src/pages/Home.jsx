@@ -5,38 +5,12 @@ import CtaBanner from '../components/CtaBanner'
 import useScrollReveal from '../hooks/useScrollReveal'
 import { services } from '../data/services'
 
-const ShieldBig = () => (
-  <svg className="shield-big" viewBox="0 0 200 240" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <linearGradient id="sg1" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stopColor="#c8a84b" stopOpacity="0.2" />
-        <stop offset="100%" stopColor="#c8a84b" stopOpacity="0.05" />
-      </linearGradient>
-      <linearGradient id="sg2" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stopColor="#c8a84b" stopOpacity="0.12" />
-        <stop offset="100%" stopColor="#c8a84b" stopOpacity="0.02" />
-      </linearGradient>
-    </defs>
-    {/* Outer shield */}
-    <path d="M100 8L16 46V116C16 160 52 200 100 216C148 200 184 160 184 116V46L100 8Z"
-      fill="url(#sg1)" stroke="#c8a84b" strokeWidth="1.5" />
-    {/* Inner shield */}
-    <path d="M100 32L36 62V116C36 152 64 184 100 196C136 184 164 152 164 116V62L100 32Z"
-      fill="url(#sg2)" stroke="#c8a84b" strokeWidth="1" strokeOpacity="0.6" />
-    {/* Innermost */}
-    <path d="M100 54L56 76V116C56 144 76 168 100 178C124 168 144 144 144 116V76L100 54Z"
-      fill="rgba(200,168,75,0.05)" stroke="#c8a84b" strokeWidth="0.75" strokeOpacity="0.4" />
-    {/* Check mark */}
-    <path d="M72 116L90 136L128 100"
-      stroke="#c8a84b" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" />
-    {/* Top divider line */}
-    <line x1="60" y1="84" x2="140" y2="84" stroke="#c8a84b" strokeWidth="0.5" strokeOpacity="0.3" />
-    {/* Bottom text area */}
-    <text x="100" y="158" textAnchor="middle" fill="#c8a84b" fillOpacity="0.5"
-      fontFamily="Bebas Neue, sans-serif" fontSize="10" letterSpacing="4">
-      ELITE SHIELD
-    </text>
-  </svg>
+const HeroLogo = () => (
+  <img
+    src="/assets/logo.jpeg"
+    alt="Elite Shield Security Services"
+    className="hero-logo-img"
+  />
 )
 
 const PhoneIcon = () => (
@@ -88,7 +62,7 @@ export default function Home() {
 
             <div className="hero-stats">
               <div className="stat">
-                <div className="stat-num">15+</div>
+                <div className="stat-num">18+</div>
                 <div className="stat-label">Services</div>
               </div>
               <div className="stat">
@@ -103,7 +77,7 @@ export default function Home() {
           </div>
 
           <div className="hero-visual">
-            <ShieldBig />
+            <HeroLogo />
           </div>
         </div>
       </section>
