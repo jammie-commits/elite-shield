@@ -73,7 +73,7 @@ export default function About() {
         <div className="inner">
           <div className="about-photo reveal">
             <img
-              src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80"
+              src="/assets/MANNED-SECURITY SERVICES.jpeg"
               alt="Elite Shield security headquarters and team"
             />
             <div className="about-photo-overlay">
@@ -191,7 +191,7 @@ export default function About() {
         <div className="inner">
           <div className="training-photo reveal">
             <img
-              src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=800&q=80"
+              src="/assets/training-academy.jpeg"
               alt="Elite Shield security officer training programme"
             />
             <div className="training-photo-overlay" />
